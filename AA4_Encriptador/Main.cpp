@@ -1,7 +1,7 @@
 #include "FileManager.h"
 
 int main() {
-	writeOnFile();
+	askToRecover();
 
 	return 0;
 }
