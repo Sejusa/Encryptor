@@ -3,6 +3,7 @@
 #include <string>
 #include "InputControl.h"
 #include "Types.h"
+#include "Encryptor.h"
 
 void writeOnFile(SaveMode mode) {
 	std::cout << "Write all the messages you want. If you want to stop, please write \"exit\"." << std::endl;
@@ -26,7 +27,7 @@ void writeOnFile(SaveMode mode) {
 			std::getline(std::cin, line);
 
 			if (line != "exit") { //To avoid that when the user writes exit to leave the program, "exit" is written on the archive.
-				file << line << std::endl; //We write on the archive.
+				file << caesarCipher(line, ENCRYPT) << std::endl; //We write on the archive.
 			}
 		}
 
@@ -59,7 +60,7 @@ void askToRecover() {
 			std::cout << "Recovering your messages..." << std::endl;
 
 			while (getline(file, line)) { //We get every line of the archive.
-				std::cout << line << std::endl;
+				std::cout << caesarCipher(line, DECRYPT) << std::endl;
 			}
 
 			file.close();
