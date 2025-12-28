@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Encryptor.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="InputControl.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Encryptor.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="InputControl.h" />
     <ClInclude Include="Types.h" />
