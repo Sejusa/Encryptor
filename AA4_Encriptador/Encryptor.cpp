@@ -1,5 +1,6 @@
 #include <string>
 #include "Types.h"
+#include <vector>
 
 std::string caesarCipher(std::string line, CaesarMode mode) {
 	for (short i = startingValue; i < line.length(); i++) {
@@ -14,10 +15,23 @@ std::string caesarCipher(std::string line, CaesarMode mode) {
 			}
 
 			else {
-				line[i] = ((line[i] - base - key) % alphabetSize) + base;
+				//In this case it's the same as above but I sum alphabetSize to avoid negative numbers.
+				line[i] = ((line[i] - base - key + alphabetSize) % alphabetSize) + base;
 			}
 		}
 	}
 	
 	return line;
+}
+
+int checkSum(std::vector <std::string> text) {
+	int checkSum = startingValue;
+
+	for (short i = startingValue; i < text.size(); i++) { //First we enter on each string on vector [i] and later on each character [j].
+		for (short j = startingValue; j < text[i].size(); j++) {
+			checkSum += text[i][j];
+		}
+	}
+
+	return checkSum;
 }
