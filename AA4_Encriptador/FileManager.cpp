@@ -6,6 +6,8 @@
 #include "Encryptor.h"
 
 void writeOnFile(std::vector <std::string> &text) {
+	std::vector <std::string> encryptedText;
+
 	std::cout << "\nWrite all the messages you want. If you want to stop, please write \"exit\"." << std::endl;
 
 	std::ofstream file; //To write on the archive.
@@ -23,10 +25,15 @@ void writeOnFile(std::vector <std::string> &text) {
 			}
 		}
 
-		file << checkSum(text) << std::endl; //We save on the file the checksum of all the characters.
-
 		for (short i = startingValue; i < text.size(); i++) {
-			file << caesarCipher(text[i], ENCRYPT) << std::endl; //We write on the archive using Caesar cypher.
+			encryptedText.push_back(caesarCipher(text[i], ENCRYPT)); //We add the encrypted line to a vector to later calculate the checksum.
+			
+		}
+
+		file << checkSum(encryptedText) << std::endl; //We save on the file the checksum of all the characters.
+
+		for (short i = startingValue; i < encryptedText.size(); i++) {
+			file << encryptedText[i] << std::endl;
 		}
 		
 		std::cout << "\nSaving data. Leaving the program..." << std::endl;
@@ -41,6 +48,7 @@ void writeOnFile(std::vector <std::string> &text) {
 
 void askToRecover() {
 	std::vector <std::string> text;
+	std::vector <std::string> encryptedText;
 	bool firstLine = true;
 	int number = startingValue;
 
@@ -69,10 +77,11 @@ void askToRecover() {
 
 				else {
 					text.push_back(caesarCipher(line, DECRYPT)); //We save the decrypted line on the vector.
+					encryptedText.push_back(line); //We save the line without decrypting so late check if the file has been modified.
 				}
 			}
 
-			if (checkSum(text) != number) {
+			if (checkSum(encryptedText) != number) {
 				std::cout << "\nDanger! The file has been modified.\n" << std::endl;
 			}
 

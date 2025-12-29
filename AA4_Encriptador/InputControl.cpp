@@ -9,7 +9,6 @@ std::string inputControl(std::string* inputPtr) { //This function will return a 
 	std::string line;
 
 	while (!isValid) {
-		//*inputPtr = tolower(*inputPtr); //We convert the input to lowercase so later we can check on FileMangaer.cpp if the user wrote 'y' or anything else.
 		std::getline(std::cin, line); //We read all the line.
 
 		if (line.length() == lengthToAccept) {
