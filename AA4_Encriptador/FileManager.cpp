@@ -12,7 +12,7 @@ void writeOnFile(std::vector <std::string> &text) {
 
 	std::ofstream file; //To write on the archive.
 
-	file.open("chat.txt", std::ios::trunc); //We overwrite (trunc) because the checksum header changes with every new message, so we need to rewrite the whole file.
+	file.open(archiveName, std::ios::trunc); //We overwrite (trunc) because the checksum header changes with every new message, so we need to rewrite the whole file.
 
 	if (file.is_open()) { //I check again to avoid crashes if the user has deleted the archive.
 		std::string line;
@@ -53,7 +53,7 @@ void askToRecover() {
 	int number = startingValue;
 
 	std::ifstream file;
-	file.open("chat.txt");
+	file.open(archiveName);
 
 	if (file.is_open()) { //To check if the archive has been created or already exists.
 		file.close(); //We close to avoid bugs.
@@ -65,7 +65,7 @@ void askToRecover() {
 		
 		if (input == "y") {
 			std::string line;
-			file.open("chat.txt");
+			file.open(archiveName);
 
 			std::cout << "\nRecovering your messages..." << std::endl;
 
