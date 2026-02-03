@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="Encryptor.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="FileManager.cpp">
@@ -24,22 +24,22 @@
     <ClCompile Include="InputControl.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="Encryptor.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Encryptor.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
     <ClInclude Include="FileManager.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="InputControl.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Encryptor.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

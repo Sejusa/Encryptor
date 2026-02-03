@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d99ac436-3e8a-4638-ad76-76abe574bcd8}</ProjectGuid>
-    <RootNamespace>AA4Encriptador</RootNamespace>
+    <ProjectGuid>{52bc9144-2b78-4fcf-8094-9526e9fa8d56}</ProjectGuid>
+    <RootNamespace>Encryptor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
